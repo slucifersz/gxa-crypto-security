@@ -43,3 +43,9 @@ uv run pytest lecture-01/tests
 ```
 
 参考答案在 `solution/`，做完再看。用 `GXA_SOLUTION=1 uv run pytest lecture-01/tests` 可以检查参考答案。
+
+## Fork 解答笔记
+
+- 小曲线上用 `None` 表示无穷远点。枚举从 `1G` 开始，第一次回到无穷远点是 `18G`，因此当目标为 `None` 时，最小正整数解是 18。
+- 以太坊地址派生先计算公钥，再将两个 32 字节坐标拼接后计算 Keccak-256，取哈希末尾 20 字节作为地址。
+- 在仓库根目录执行上面的判分命令即可测试 fork 的练习实现。若此前设置过 `GXA_SOLUTION`，先清除该环境变量，以便测试实际解答。

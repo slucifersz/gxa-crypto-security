@@ -39,6 +39,15 @@ def test_4_brute_force():
         assert ecc.brute_force(pt) == k
 
 
+def test_brute_force_infinity_returns_generator_order():
+    assert ecc.brute_force(None) == 18
+    assert ecc.brute_force(None, g=TOY[9]) == 2
+
+
+def test_point_with_zero_y_doubles_to_infinity():
+    assert ecc.add(TOY[9], TOY[9], ecc.TOY_P) is None
+
+
 def test_5_secp256k1():
     two_g = ecc.mul(2, ecc.G, ecc.P)
     assert two_g[0] == 0xC6047F9441ED7D6D3045406E95C07CD85C778E4B8CEF3CA7ABAC09B95C709EE5
